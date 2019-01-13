@@ -1,0 +1,86 @@
+//layout variables
+$max-width: 1400px;
+$gutter: 5px;
+
+//fonts and typography
+$open-sans: 'Open Sans', sans-serif;
+$bold: 700;
+
+//media query variables
+$media-break: 769px;
+
+@mixin center($w) {
+  width: $w;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin flex-it (
+  $disp: flex,
+  $dir: null,
+  $wrap: null,
+  $just: null,
+  $basis: null,
+  $flex: null) {
+    display: $disp ;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $just;
+    flex-basis: $basis;
+    flex-grow: $flex;
+    // margin: 25px;
+    text-align: center;
+    @content;
+}
+//Media query for screens larger than 769px//
+@mixin media($size) {
+  @if $size == 'lg' {
+      @media (min-width: $media-break) {
+          @content;
+      }
+  }
+  @else {
+      @error "'#{$size}' is not valid $size argument";
+  }
+}
+body,
+.grid__photo--inner {
+  @include center(90%);
+}
+form {
+  margin: 20px;
+  text-align: center;
+    input {
+      width: 100%;
+      outline: 0;
+      border: 2px solid aliceblue;
+      border-radius: 4px;
+      // text-align: right;
+  }
+}
+main {
+  @include center(100%);
+}
+img {
+  max-width: 100%;
+}
+.grid__photo--inner {
+  @include flex-it($dir: column, $wrap: wrap);
+  align-items: center;
+  @include media('lg') {
+    @include center(90%);
+    padding: 0;
+    @include flex-it($dir: row, $wrap: wrap, $just: space-between)
+  }
+}
+
+
+.pic-item {
+  margin: 20px;
+  border: 2px solid aliceblue;
+  &:hover {
+    border: 2px solid #fff7f0;
+    opacity: 0.6;
+  }
+  @include media('lg') {}
+}
