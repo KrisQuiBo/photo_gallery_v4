@@ -8,6 +8,10 @@ $bold: 700;
 
 //media query variables
 $media-break: 769px;
+$mobile-width: 480px;
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$tablet-width: 768px;
+$desktop-width: 1024px;
 
 @mixin center($w) {
   width: $w;
@@ -39,23 +43,44 @@ $media-break: 769px;
           @content;
       }
   }
-  @else {
-      @error "'#{$size}' is not valid $size argument";
+}
+@mixin tabletRange {
+  @media (min-width: #{$tablet-width}) and (min-width: #{$desktop-width - 1px}) {
+    @content;
   }
 }
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
 body,
 .grid__photo--inner {
+  background-color: whitesmoke;
   @include center(90%);
 }
 form {
   margin: 20px;
   text-align: center;
     input {
-      width: 100%;
+      width: 90%;
       outline: 0;
-      border: 2px solid aliceblue;
+      border: 2px solid ivory;
       border-radius: 4px;
       // text-align: right;
+      font-family: $open-sans;
+      padding-left: 10px;
+  }
+  input:focus {
+    outline: 0;
+    border: 2px solid wheat;
   }
 }
 main {
@@ -67,20 +92,26 @@ img {
 .grid__photo--inner {
   @include flex-it($dir: column, $wrap: wrap);
   align-items: center;
-  @include media('lg') {
+  @include mobile {
     @include center(90%);
     padding: 0;
-    @include flex-it($dir: row, $wrap: wrap, $just: space-between)
+    @include flex-it($dir: row, $wrap: wrap, $just: space-between);
   }
 }
-
 
 .pic-item {
   margin: 20px;
   border: 2px solid aliceblue;
   &:hover {
-    border: 2px solid #fff7f0;
+    border: 2px solid wheat;
     opacity: 0.6;
   }
   @include media('lg') {}
+}
+.lb-caption {
+font-family: $open-sans;
+}
+.lightbox, .lb-image, .lb-container {
+  width: 100%;
+  height: auto;
 }

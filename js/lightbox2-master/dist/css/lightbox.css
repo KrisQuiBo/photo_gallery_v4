@@ -139,6 +139,14 @@ html.lb-disable-scrolling {
   opacity: 1;
 }
 
+/*adding responsiveness*/
+/* .lb-image, .lb-dataContainer, .lb-outerContainer {
+ max-width: 100%;
+ height: auto !important;
+ width: 100%;
+} */
+/**/
+
 .lb-dataContainer {
   margin: 0 auto;
   padding-top: 5px;
@@ -204,4 +212,10 @@ html.lb-disable-scrolling {
   cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+}
+@media (min-width: 1024px) {
+  .lightbox, .lb-image {
+    width: 100%;
+    height: auto;
+  }
 }

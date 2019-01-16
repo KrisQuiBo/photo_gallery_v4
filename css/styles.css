@@ -1,5 +1,6 @@
 body,
 .grid__photo--inner {
+  background-color: whitesmoke;
   width: 90%;
   max-width: 1400px;
   margin-left: auto;
@@ -11,10 +12,16 @@ form {
   text-align: center;
 }
 form input {
-  width: 100%;
+  width: 90%;
   outline: 0;
-  border: 2px solid aliceblue;
+  border: 2px solid ivory;
   border-radius: 4px;
+  font-family: "Open Sans", sans-serif;
+  padding-left: 10px;
+}
+form input:focus {
+  outline: 0;
+  border: 2px solid wheat;
 }
 
 main {
@@ -35,7 +42,7 @@ img {
   text-align: center;
   align-items: center;
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .grid__photo--inner {
     width: 90%;
     max-width: 1400px;
@@ -55,8 +62,16 @@ img {
   border: 2px solid aliceblue;
 }
 .pic-item:hover {
-  border: 2px solid #fff7f0;
+  border: 2px solid wheat;
   opacity: 0.6;
+}
+.lb-caption {
+  font-family: "Open Sans", sans-serif;
+}
+
+.lightbox, .lb-image, .lb-container {
+  width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */

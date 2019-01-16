@@ -17,6 +17,11 @@
       }
   });
 
+  lightbox.option({
+    'fitImagesInViewport': true,
+    'positionFromTop':	50
+  })
+
 
 
 // Capture user input, convert to lower case, log to console
