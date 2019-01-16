@@ -12,12 +12,18 @@ form {
   text-align: center;
 }
 form input {
-  width: 90%;
+  width: 50%;
   outline: 0;
   border: 2px solid ivory;
   border-radius: 4px;
   font-family: "Open Sans", sans-serif;
+  font-size: 80%;
   padding-left: 10px;
+}
+@media (min-width: 768px) {
+  form input {
+    width: 40%;
+  }
 }
 form input:focus {
   outline: 0;
@@ -52,7 +58,7 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
   }
 }
@@ -65,8 +71,14 @@ img {
   border: 2px solid wheat;
   opacity: 0.6;
 }
-.lb-caption {
+.lb-details .lb-caption {
   font-family: "Open Sans", sans-serif;
+}
+@media (min-width: 768px) {
+  .lb-details .lb-caption {
+    font-size: 18px;
+    line-height: 2em;
+  }
 }
 
 .lightbox, .lb-image, .lb-container {
