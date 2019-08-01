@@ -66,6 +66,13 @@ body,
   background-color: whitesmoke;
   @include center(90%);
 }
+
+h1 {
+  font-family: $open-sans;
+  text-align: center;
+  color: wheat;
+  text-shadow: 1px 1px 1px #d5d1d0
+}
 form {
   margin: 20px;
   text-align: center;
