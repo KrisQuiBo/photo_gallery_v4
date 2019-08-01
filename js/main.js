@@ -1,4 +1,4 @@
-
+// photo gallery
   const searchForm = document.getElementById('searchForm');
   var keyword = document.getElementById('keyword');
   let dataTitle = document.querySelector('data-title');
